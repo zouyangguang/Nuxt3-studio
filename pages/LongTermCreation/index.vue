@@ -334,10 +334,10 @@ useSeoMeta({
 
 .LongTermCreation_Mobile_D2_V video {
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 10px solid black;
-  box-shadow: 0 0 1px 1px white;
-  border-radius: 15px;
+  /*background-color: rgba(0, 0, 0, 0.7);*/
+  /*border: 10px solid black;*/
+  box-shadow: 0 0 4px 1px #c4c4c4;
+  /*border-radius: 15px;*/
 }
 
 .LongTermCreation_Mobile_D2_V > .swiper {

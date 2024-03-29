@@ -14,7 +14,7 @@ useSeoMeta({
   referrer: "no-referrer"
 })
 import "@/public/css/animate4.1.1.min.css"
-
+import "@/public/css/app.css"
 /*                        _oo0oo_
  *                       o8888888o
  *                       88" . "88
@@ -37,10 +37,3 @@ import "@/public/css/animate4.1.1.min.css"
  *          佛祖保佑       永不宕机     永无BUG
  */
 </script>
-<script>
-
-</script>
-
-<style>
-@import "/css/app.css";
-</style>

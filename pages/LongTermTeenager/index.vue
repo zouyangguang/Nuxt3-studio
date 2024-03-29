@@ -1,4 +1,5 @@
 <template>
+
   <div class="LongTermTeenager">
     <div class="LongTermTeenager_D1 layout_backdrop">
       <div class="layout_content">
@@ -104,10 +105,6 @@ const toArticleContent = (item) => {
     query: {articleId: item.articleId}
   })
 }
-
-onMounted(() => {
-  console.log("1")
-})
 
 
 const disabled = ref(false)
