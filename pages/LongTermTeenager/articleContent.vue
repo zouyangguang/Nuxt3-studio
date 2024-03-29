@@ -119,10 +119,12 @@ if (data.value != null) {
   .content {
     width: 95%;
   }
-  .content_title > div{
+
+  .content_title > div {
     flex-direction: column;
   }
-  .content_title > div > span{
+
+  .content_title > div > span {
     margin: 5px;
   }
 }

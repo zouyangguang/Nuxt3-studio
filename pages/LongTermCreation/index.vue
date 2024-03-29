@@ -130,7 +130,7 @@ const LongTermCreationData = ref([
 ])
 
 
-const {data} = useAsyncData('longTermCreationData', () => {
+const {data} = await useAsyncData('longTermCreationData', () => {
   return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermCreation/productsList/data')
       .then((res) => {
         return res.data.value
@@ -168,35 +168,16 @@ const fileUrlList = ref([
 ])
 
 
-// const {data: fileUrlListData} =  useAsyncData('fileUrlList', () => {
-//   return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermCreation/fileUrlList/data')
-//       .then((res) => {
-//         if (res.data.value != null) {
-//           fileUrlList.value = res.data.value;
-//         } else {
-//           fileUrlList.value = [
-//             {
-//               "productName": "实习宝(测试)",
-//               "videoUrl": "/img/官网视频M.mp4"
-//             },
-//             {
-//               "productName": "A+牧草迷宫(测试)",
-//               "screenshotImgUrlList": [
-//                 "/img/b创造2电脑.png",
-//                 "/img/a首页2手机1.png",
-//                 "/img/a首页2手机2.png",
-//                 "/img/a首页2手机3.png"
-//               ]
-//             },
-//             {
-//               "productName": "雏鹰",
-//               "videoUrl": "/img/官网视频M.mp4"
-//             }
-//           ];
-//         }
-//       });
-// });
+const {data: fileUrlListData} = await useAsyncData('fileUrlList', () => {
+  return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermCreation/fileUrlList/data')
+      .then((res) => {
+        return res.data.value;
+      })
+});
 
+if (fileUrlListData.value != null) {
+  fileUrlList.value = fileUrlListData.value;
+}
 useSeoMeta({
   title: "长远创造",
   description: "长远创造",
