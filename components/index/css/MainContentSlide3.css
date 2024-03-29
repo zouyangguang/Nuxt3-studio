@@ -1,0 +1,192 @@
+
+    /*3*/
+.MainContent_slide3 {
+    position: relative;
+    overflow: hidden;
+    background: url("/img/a首页3b.png") center center no-repeat;
+    background-size: cover;
+}
+
+.MainContent_slide3::before {
+    position: absolute;
+    width: 150dvmax;
+    height: 120dvmax;
+    z-index: 0;
+    content: " ";
+    background: url("/img/a首页3b.png") center center no-repeat;
+    background-size: cover;
+    -webkit-transform: rotate(30deg);
+    animation: MainContent_slide3_a infinite linear 60s;
+}
+
+@keyframes MainContent_slide3_a {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.MainContent_slide3_N {
+    margin: 20% auto 0;
+    width: 80%;
+    aspect-ratio: 232 / 100;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    color: white;
+}
+
+.MainContent_slide3_N_img {
+    width: 70%;
+    height: 100%;
+}
+
+.MainContent_slide3_N_img_swiper {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.MainContent_slide3_N_img_swiper .swiper-slide > img {
+    width: 100%;
+    height: auto;
+}
+
+.MainContent_slide3_N_D {
+    padding: 5px;
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+.MainContent_slide3_N_D h2 {
+    font-size: 2cqw;
+    margin-bottom: 5px;
+}
+
+.MainContent_slide3_N_D_p {
+    font-size: 1.5cqw;
+    height: 60%;
+    overflow: hidden;
+    overflow-y: auto;
+    -webkit-box-orient: vertical;
+    transition: 0.5s;
+}
+
+.MainContent_slide3_N_D_p::-webkit-scrollbar {
+    width: 4px;
+    background: none;
+    border-radius: 5px;
+}
+
+.MainContent_slide3_N_D_p::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    background-color: #b8b8b8;
+    border-radius: 5px;
+}
+
+.MainContent_slide3_N_D_p::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+.MainContent_slide3_N_D_1 {
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.MainContent_slide3_N_D_1 div {
+    display: flex;
+}
+
+.MainContent_slide3_N_D_1 h3 {
+    font-size: 1.5cqw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.MainContent_slide3_N_D_1 div p:nth-child(2) {
+    font-size: 5cqw;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(3, 181, 0, 0.49) 0%, #CAFFF8 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: bold;
+    text-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.MainContent_slide3_N_D_1_p {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.00) 100%) !important;
+    -webkit-background-clip: text !important;
+}
+
+.MainContent_slide3_N_D_1 div p:nth-child(3) {
+    font-size: 1cqw;
+    display: flex;
+    height: 80%;
+    flex-direction: column-reverse;
+}
+
+@media screen and (max-width: 900px) {
+    /*3*/
+    .MainContent_slide3_N {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1%;
+        margin: 0;
+        position: absolute;
+        bottom: 0;
+        animation: slideInUp;
+        animation-duration: 1s;
+    }
+
+    .MainContent_slide3_N .MainContent_slide3_N_img {
+        width: 100%;
+        height: auto;
+        max-height: 40%;
+        transition: 0.5s;
+    }
+
+    .MainContent_slide3_N .MainContent_slide3_N_D {
+        width: 98%;
+        height: 70%;
+        min-height: 60%;
+    }
+
+    /*内容 标题*/
+    .MainContent_slide3_N_D h2 {
+        font-size: 1.5em;
+    }
+
+    /*内容 详细*/
+    .MainContent_slide3_N_D_p {
+        font-size: 1em;
+    }
+
+    .MainContent_slide3_N_D_1 h3 {
+        font-size: 1em;
+    }
+
+    .MainContent_slide3_N_D_1 div p:nth-child(2) {
+        font-size: 3em;
+    }
+
+    .MainContent_slide3_N_D_1 div p:nth-child(3) {
+        font-size: 1em;
+        height: 90%;
+    }
+}

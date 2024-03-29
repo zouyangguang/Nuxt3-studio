@@ -1,0 +1,228 @@
+
+    /*5*/
+    /*背景*/
+.MainContent_slide5 {
+    background: url("/img/a首页5b.png") center center;
+    background-size: cover;
+}
+
+/*pc*/
+/*内容*/
+.MainContent_slide5_N {
+    width: 100%;
+    height: 75%;
+    position: absolute;
+    bottom: 0;
+}
+
+/*加入我们 按钮*/
+.MainContent_slide5_N_D_btn {
+    position: absolute;
+    left: 20%;
+    bottom: 0;
+    width: 60%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    font-size: 2cqw;
+    cursor: pointer;
+    transition: 0.5s;
+    background: linear-gradient(270deg, #003ABE 17%, rgba(255, 255, 255, 0.00) 100%);
+    border-radius: 5px;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.MainContent_slide5_N_D_btn:hover {
+    box-shadow: 0 4px 10px 0 rgba(241, 239, 239, 0.5);
+}
+
+/*两边 标签*/
+.MainContent_slide5_N_D1, .MainContent_slide5_N_D2 {
+    position: absolute;
+    width: 20%;
+    top: 5px;
+    height: 100%;
+}
+
+.MainContent_slide5_N_D1 {
+    left: 0;
+}
+
+.MainContent_slide5_N_D2 {
+    right: 0;
+}
+
+.MainContent_slide5_N_D1 li, .MainContent_slide5_N_D2 li, .MainContent_slide5_N_DS_Tag li {
+    width: 90%;
+    height: 10%;
+    line-height: 250%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1% auto 5%;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    font-size: 2.5cqw;
+    font-family: "楷体";
+}
+
+/*轮播图*/
+.MainContent_slide5_N_D {
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    height: 85%;
+}
+
+/*轮播图内容*/
+.MainContent_slide5_N_D .swiper-slide {
+    display: flex;
+    justify-content: space-around;
+    align-items: self-start;
+    padding-top: 5px;
+}
+
+/*内容的选项卡*/
+.MainContent_slide5_N_D .swiper-slide li,
+.MainContent_slide5_N_DS .swiper-slide {
+    width: 48%;
+    aspect-ratio: 16 / 20;
+    overflow: hidden;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.MainContent_slide5_N_D .swiper-slide li:hover {
+    box-shadow: 0 0 2px 2px rgba(241, 239, 239, 0.5);
+}
+
+/*图片盒子*/
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(1),
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(1) {
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/*图片*/
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(1) img,
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(1) img {
+    width: 130%;
+    height: 130%;
+    border: 1px solid black;
+}
+
+/*介绍*/
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(2),
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(2) {
+    height: 60%;
+    margin: 0 auto;
+    color: white;
+    padding: 3%;
+    overflow-y: auto;
+}
+
+/*滚动条*/
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(2)::-webkit-scrollbar,
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(2)::-webkit-scrollbar {
+    width: 0.5cqw;
+    background: none;
+    border-radius: 5px;
+}
+
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(2)::-webkit-scrollbar-thumb,
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(2)::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+    background-color: #b8b8b8;
+    border-radius: 5px;
+}
+
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(2)::-webkit-scrollbar-thumb:hover,
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(2)::-webkit-scrollbar-thumb:hover {
+    background-color: white;
+}
+
+/*标题*/
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(2) h3 {
+    font-size: 3cqw;
+}
+
+/*介绍*/
+.MainContent_slide5_N_D .swiper-slide li div:nth-child(2) p {
+    margin-top: 3%;
+    font-size: 2cqw;
+}
+
+
+/*!*移动*!*/
+.MainContent_slide5_N_DS {
+    width: 80%;
+    max-width: 300px;
+    margin-top: 2%;
+    border-radius: 5px;
+    overflow: initial;
+    display: none;
+}
+
+.MainContent_slide5_N_DS .swiper-slide * {
+    /*支持上下 的交互手势 解决切换轮播图画面抖动问题*/
+    touch-action: pan-y;
+}
+
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(2) h3 {
+    font-size: 2rem;
+}
+
+.MainContent_slide5_N_DS .swiper-slide div:nth-child(2) p {
+    font-size: 1.5rem;
+    margin-top: 3%;
+}
+
+.MainContent_slide5_N_DS_Tag {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .MainContent_slide5_N_D, .MainContent_slide5_N_D2, .MainContent_slide5_N_D1 {
+        display: none;
+    }
+
+    /*  加入我们*/
+    .MainContent_slide5_N_D_btn {
+        bottom: -8%;
+        font-size: 1.5em;
+        height: 8%;
+    }
+
+    .MainContent_slide5_N_DS {
+        display: block;
+    }
+
+    .MainContent_slide5_N_DS_Tag {
+        width: 100%;
+        height: auto;
+        display: flex;
+        top: auto;
+        margin-top: 5px;
+    }
+
+    .MainContent_slide5_N_DS_Tag li {
+        height: 2em;
+        margin: 5px;
+        font-size: 1.5em;
+    }
+}
+
+
