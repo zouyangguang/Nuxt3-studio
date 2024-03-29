@@ -89,15 +89,28 @@ const pageDataArray = ref([
   }
 ])
 
-const {data} = await useAsyncData('PageDataArray', () => {
-  return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/articleList/data')
-      .then((res) => {
-        return res.data.value;
-      })
-});
-if (data.value != null) {
-  pageDataArray.value = data.value;
-}
+const url = publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/articleList/data'
+// const {data} = await useAsyncData('PageDataArray', () => {
+//   return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/articleList/data')
+//       .then((res) => {
+//         return res.data.value;
+//       })
+// });
+// if (data.value != null) {
+//   pageDataArray.value = data.value;
+// }
+
+const {data, pending, error} = await useFetch(url, {
+  server: false
+})
+watchEffect(() => {
+  if (!pending.value && !error.value) {
+    // 在这里处理你的数据
+    pageDataArray.value = data.value;
+  }
+})
+
+
 // 跳转信息页
 const toArticleContent = (item) => {
   useRouter().push({

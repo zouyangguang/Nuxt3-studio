@@ -1,20 +1,22 @@
 <template>
-  <div class="articleContent">
-    <div class="articleBackground"></div>
-    <div class="content">
-      <div class="content_title animate__animated animate__fadeInDown">
-        <h1>{{ articleContentData.articleTitle }}</h1>
-        <h2>作者: {{ articleContentData.author }}</h2>
-        <div>
-          <span><img src="/img/c日历.png" alt="">发表于{{ articleContentData.createDate }}</span>
-          <span> <img src="/img/c更新.png" alt="">更新于{{ articleContentData.updateDate }}</span>
+  <Suspense>
+    <div class="articleContent">
+      <div class="articleBackground"></div>
+      <div class="content">
+        <div class="content_title animate__animated animate__fadeInDown">
+          <h1>{{ articleContentData.articleTitle }}</h1>
+          <h2>作者: {{ articleContentData.author }}</h2>
+          <div>
+            <span><img src="/img/c日历.png" alt="">发表于{{ articleContentData.createDate }}</span>
+            <span> <img src="/img/c更新.png" alt="">更新于{{ articleContentData.updateDate }}</span>
+          </div>
+        </div>
+        <div class="content_articleContent animate__animated animate__fadeIn animate__delay-1s">
+          {{ articleContentData.articleContent }}
         </div>
       </div>
-      <div class="content_articleContent animate__animated animate__fadeIn animate__delay-1s">
-        {{ articleContentData.articleContent }}
-      </div>
     </div>
-  </div>
+  </Suspense>
 </template>
 
 <script setup>
@@ -28,17 +30,18 @@ const articleContentData = ref({
   "createDate": "2024-03-21 17:37:06",
   "updateDate": "2024-03-21 17:37:06"
 })
-const route = useRoute()
 
-const {data} = await useAsyncData('PageDataArray', () => {
-  return useFetch(publicData().value.IPAddress + "/changyuan/query/LongTermTeenager/article/articleContent/data/" + route.query.articleId)
-      .then((res) => {
-        return res.data.value;
-      })
-});
-if (data.value != null) {
-  articleContentData.value = data.value;
-}
+const route = useRoute()
+const url = ref(publicData().value.IPAddress + "/changyuan/query/LongTermTeenager/article/articleContent/data/" + route.query.articleId)
+
+const { data, pending, error } = await useFetch(url, {
+  server: false
+})
+watchEffect(() => {
+  if (!pending.value && !error.value) {
+    articleContentData.value = data.value;
+  }
+})
 </script>
 
 <style scoped>

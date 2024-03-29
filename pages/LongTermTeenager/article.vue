@@ -52,15 +52,26 @@ const articleData = ref([
     "createDate": "2024-03-21 17:41:14"
   }
 ])
-const {data} = await useAsyncData('PageDataArray', () => {
-  return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/article/articleList/data')
-      .then((res) => {
-        return res.data.value;
-      })
-});
-if (data.value != null) {
-  articleData.value = data.value;
-}
+// const {data} = await useAsyncData('PageDataArray', () => {
+//   return useFetch(url)
+//       .then((res) => {
+//         return res.data.value;
+//       })
+// });
+// if (data.value != null) {
+//   articleData.value = data.value;
+// }
+
+const url=publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/article/articleList/data'
+
+const { data, pending, error } = await useFetch(url, {
+  server: false
+})
+watchEffect(() => {
+  if (!pending.value && !error.value) {
+    articleData.value = data.value;
+  }
+})
 // 跳转信息页
 const toArticleContent = (item) => {
   useRouter().push({
