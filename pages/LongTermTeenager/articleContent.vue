@@ -34,7 +34,7 @@ const articleContentData = ref({
 const route = useRoute()
 const url = ref(publicData().value.IPAddress + "/changyuan/query/LongTermTeenager/article/articleContent/data/" + route.query.articleId)
 
-const { data, pending, error } = await useFetch(url, {
+const {data, pending, error} = await useFetch(url, {
   server: false
 })
 watchEffect(() => {

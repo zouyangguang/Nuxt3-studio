@@ -90,15 +90,6 @@ const pageDataArray = ref([
 ])
 
 const url = publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/articleList/data'
-// const {data} = await useAsyncData('PageDataArray', () => {
-//   return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/articleList/data')
-//       .then((res) => {
-//         return res.data.value;
-//       })
-// });
-// if (data.value != null) {
-//   pageDataArray.value = data.value;
-// }
 
 const {data, pending, error} = await useFetch(url, {
   server: false
