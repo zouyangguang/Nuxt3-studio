@@ -1,5 +1,4 @@
 <template>
-  <Suspense>
     <div class="articleContent">
       <div class="articleBackground"></div>
       <div class="content">
@@ -16,7 +15,6 @@
         </div>
       </div>
     </div>
-  </Suspense>
 </template>
 
 <script setup>
@@ -39,6 +37,7 @@ const {data, pending, error} = await useFetch(url, {
 })
 watchEffect(() => {
   if (!pending.value && !error.value) {
+    console.log(data.value)
     articleContentData.value = data.value;
   }
 })

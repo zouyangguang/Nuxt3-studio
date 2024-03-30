@@ -38,24 +38,22 @@
           </div>
 
         </div>
-
-        <div class="LongTermTeenager_D1_Mobile animate__animated animate__fadeInUp">
-          <swiper :pagination="{clickable:true}" :modules="[SwiperPagination]"
-                  @slideChangeTransitionStart="slideChangeTransitionStart">
-            <swiper-slide v-for="item in pageDataArray">
-              <img alt="" :src="item.articleImgUrl" @click="toArticleContent(item.articleId)">
-            </swiper-slide>
-          </swiper>
-          <div style="height: 60%" class="boxScrollbar">
-            <NuxtLink to="/LongTermTeenager/article" style="color: white">
+        <NuxtLink to="/LongTermTeenager/article" style="color: white">
+          <div class="LongTermTeenager_D1_Mobile animate__animated animate__fadeInUp">
+            <swiper :pagination="{clickable:true}" :modules="[SwiperPagination]"
+                    @slideChangeTransitionStart="slideChangeTransitionStart">
+              <swiper-slide v-for="item in pageDataArray">
+                <img alt="" :src="item.articleImgUrl">
+              </swiper-slide>
+            </swiper>
+            <div style="height: 60%" class="boxScrollbar">
               <h1 class="animate__animated" :class="{  animate__fadeInUp: disabled }">
                 {{ pageDataArray[activeIndex].articleTitle }}</h1>
               <p class="animate__animated" :class="{  animate__fadeInUp: disabled }">
                 {{ pageDataArray[activeIndex].articleContent }}</p>
-            </NuxtLink>
+            </div>
           </div>
-        </div>
-
+        </NuxtLink>
 
       </div>
     </div>
@@ -90,6 +88,15 @@ const pageDataArray = ref([
 ])
 
 const url = publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/articleList/data'
+// const {data} = await useAsyncData('PageDataArray', () => {
+//   return useFetch(publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/articleList/data')
+//       .then((res) => {
+//         return res.data.value;
+//       })
+// });
+// if (data.value != null) {
+//   pageDataArray.value = data.value;
+// }
 
 const {data, pending, error} = await useFetch(url, {
   server: false
