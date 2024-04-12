@@ -12,33 +12,40 @@
       </IndexMainContentHeadline>
       <!--内容-->
       <div class="MainContent_slide5_N">
-
         <!--pc-->
         <swiper
             :creativeEffect="{
                   prev: {shadow:false,translate: ['-150%',0, -500]},
                   next: {shadow:false,translate: ['150%', 0, -500]}}"
             :effect="'creative'"
+            loop
             :modules="[EffectCreative]"
             @slideChange="PcChange"
             @swiper="PcChange"
             class="MainContent_slide5_N_D animate__animated animate__fadeInUp">
-          <swiper-slide class="swiper-slide" v-for="item in pageDataArrayPc">
-            <li class="MainContent_slide5_N_D_li_1">
-              <div><img alt="" :src="item.positionImgUrl[0]"></div>
-              <div>
-                <h3>{{ item.positionName[0] }}</h3>
-                <p>{{ item.positionIntroduce[0] }}</p>
-              </div>
-            </li>
-            <li class="MainContent_slide5_N_D_li_2">
-              <div><img alt="" :src="item.positionImgUrl[1]"></div>
-              <div>
-                <h3>{{ item.positionName[1] }}</h3>
-                <p>{{ item.positionIntroduce[1] }}</p>
-              </div>
-            </li>
-          </swiper-slide>
+
+          <template v-for="(item,index) in pageDataArrayPc" :key="index">
+            <swiper-slide class="swiper-slide" >
+
+              <li class="MainContent_slide5_N_D_li_1">
+                <div><img alt="" :src="item.positionImgUrl[0]"></div>
+                <div>
+                  <h3>{{ item.positionName[0] }}</h3>
+                  <p>{{ item.positionIntroduce[0] }}</p>
+                </div>
+              </li>
+
+              <li class="MainContent_slide5_N_D_li_2">
+                <div><img alt="" :src="item.positionImgUrl[1]"></div>
+                <div>
+                  <h3>{{ item.positionName[1] }}</h3>
+                  <p>{{ item.positionIntroduce[1] }}</p>
+                </div>
+              </li>
+
+            </swiper-slide>
+          </template>
+
         </swiper>
         <!--pc结束-->
 
@@ -109,52 +116,67 @@ import {EffectCreative} from 'swiper/modules';
 
 defineProps(["active"])
 // pageDataArray 存放轮播图信息
-const pageDataArray = ref([
-  {
-    "positionName": "后端工程师(测试)",
-    "positionIntroduce": "负责工作室团队项目后端开发 工作，包含数据库设计与接口设计、开发以及测试",
-    "positionDescriptionList": ['java(测试)', 'Node.js', 'Python'],
-    "positionImgUrl": "img/a首页5n1.png"
-  },
-  {
-    "positionName": "前端工程师(测试)",
-    "positionIntroduce": "负责工作室团队项目前端开发 工作，包含Web网站开发与移动端小程序或APP设计与开发",
-    "positionDescriptionList": ['java(测试)', 'Node.js', 'Python'],
-    "positionImgUrl": "img/a首页5n2.png"
-  }
-])
+const pageDataArray = ref(
+    [
+      {
+        "positionName": "后端工程师(测试)",
+        "positionIntroduce": "负责工作室团队项目后端开发 工作，包含数据库设计与接口设计、开发以及测试",
+        "positionDescriptionList": ['java(测试)', 'Node.js', 'Python'],
+        "positionImgUrl": "img/a首页5n1.png"
+      },
+      {
+        "positionName": "前端工程师(测试)",
+        "positionIntroduce": "负责工作室团队项目前端开发 工作，包含Web网站开发与移动端小程序或APP设计与开发",
+        "positionDescriptionList": ['java(测试)', 'Node.js', 'Python'],
+        "positionImgUrl": "img/a首页5n2.png"
+      }, {
+      "positionName": "后端工程师(测试)",
+      "positionIntroduce": "负责工作室团队项目后端开发 工作，包含数据库设计与接口设计、开发以及测试",
+      "positionDescriptionList": ['java(测试)', 'Node.js', 'Python'],
+      "positionImgUrl": "img/a首页5n1.png"
+    },
+      {
+        "positionName": "前端工程师(测试)",
+        "positionIntroduce": "负责工作室团队项目前端开发 工作，包含Web网站开发与移动端小程序或APP设计与开发",
+        "positionDescriptionList": ['java(测试)', 'Node.js', 'Python'],
+        "positionImgUrl": "img/a首页5n2.png"
+      }
+    ])
 
 
-const {data} = await useAsyncData('pageDataArray', () => {
-  return useFetch(publicData().value.IPAddress + '/changyuan/query/index/productList/data')
-      .then((res) => {
-        return res.data.value
-      });
-});
 
+const url = publicData().value.IPAddress + '/changyuan/query/index/productList/data'
+//获取网络请求数据
+const {data, pending, error} = await useFetch(url, {server: true})
 if (data.value != null) {
-  pageDataArray.value = data.value;
+  pageDataArray.value = [...data.value];
+  console.log("移动端数据", pageDataArray.value)
 }
 
 
-// pageDataArrayPc 存放Pc端数据格式
-const pageDataArrayPc = ref([])
-// 转换pc页面数据格式
-pageDataArray.value.forEach((value, index) => {
-  if (index % 2 === 0) {
-    pageDataArrayPc.value.push({
-      "positionName": [value.positionName],
-      "positionIntroduce": [value.positionIntroduce],
-      "positionDescriptionList": [value.positionDescriptionList],
-      "positionImgUrl": [value.positionImgUrl]
-    });
-  } else {
-    pageDataArrayPc.value[pageDataArrayPc.value.length - 1].positionName.push(value.positionName);
-    pageDataArrayPc.value[pageDataArrayPc.value.length - 1].positionIntroduce.push(value.positionIntroduce);
-    pageDataArrayPc.value[pageDataArrayPc.value.length - 1].positionDescriptionList.push(value.positionDescriptionList);
-    pageDataArrayPc.value[pageDataArrayPc.value.length - 1].positionImgUrl.push(value.positionImgUrl);
-  }
-});
+
+//转换pc页面数据格式
+const pageDataArrayPc = computed(() => {
+  let temp = []
+  // 转换pc页面数据格式
+  pageDataArray.value.forEach((value, index) => {
+    if (index % 2 === 0) {
+      temp.push({
+        "positionName": [value.positionName],
+        "positionIntroduce": [value.positionIntroduce],
+        "positionDescriptionList": [value.positionDescriptionList],
+        "positionImgUrl": [value.positionImgUrl]
+      });
+    } else {
+      temp[temp.length - 1].positionName.push(value.positionName);
+      temp[temp.length - 1].positionIntroduce.push(value.positionIntroduce);
+      temp[temp.length - 1].positionDescriptionList.push(value.positionDescriptionList);
+      temp[temp.length - 1].positionImgUrl.push(value.positionImgUrl);
+    }
+  });
+  return temp
+})
+
 
 //isShow 控制标签是否显示 tag 存放标签
 const TagArrayPc = ref({
