@@ -1,6 +1,6 @@
 <template>
   <div class="MainContent_slide5 layout_backdrop">
-    <div class="layout_content" v-show="active">
+    <div class="layout_content" v-if="active">
       <!--标题-->
       <IndexMainContentHeadline :Headline="{
         backgroundImage: 'img/a首页5b.png',
@@ -18,7 +18,6 @@
                   prev: {shadow:false,translate: ['-150%',0, -500]},
                   next: {shadow:false,translate: ['150%', 0, -500]}}"
             :effect="'creative'"
-            loop
             :modules="[EffectCreative]"
             @slideChange="PcChange"
             @swiper="PcChange"
