@@ -4,7 +4,7 @@
 
     <AppHead></AppHead>
     <NuxtPage></NuxtPage>
-    <AdminLogin></AdminLogin>
+<!--    <AdminLogin></AdminLogin>-->
   </div>
 </template>
 <script setup>
