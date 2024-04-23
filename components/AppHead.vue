@@ -23,7 +23,8 @@
       leave-active-class="animate__fadeOut">
     <div class="hiddenBox animate__animated" v-show="hiddenBox">
       <ul>
-        <NuxtLink :to="hrefs[index]" v-for="(item,index) in headlineS" @click="publicData().value.AppHeadHover=index;hiddenBox=false">
+        <NuxtLink :to="hrefs[index]" v-for="(item,index) in headlineS"
+                  @click="publicData().value.AppHeadHover=index;hiddenBox=false">
           <li :class="publicData().value.AppHeadHover===index?'hiddenBoxLiHous':''" :key="index">{{ item }}</li>
         </NuxtLink>
       </ul>
@@ -33,11 +34,23 @@
 </template>
 
 <script setup>
+
+
 const hiddenBox = ref(false)
 const headlineS = ref(["首页", "长远创造", "长远少年", "长远导师", "关于我们"])
 const btnWrapClass = ref(["btn-wrap_p_show0", "btn-wrap_p_show1", "btn-wrap_p_show2"])
 const nav_boxClass = ref(["nav-box1", "nav-box2", "nav-box3", "nav-box4", "nav-box5"])
 const hrefs = ref(["/", "/LongTermCreation", "/LongTermTeenager", "/accident", "/accident"])
+const path = useRoute().path
+if (path === "/") {
+  publicData().value.AppHeadHover = 0
+} else if (path === "/LongTermCreation") {
+  publicData().value.AppHeadHover = 1
+} else if (path.indexOf("/LongTermTeenager") !== -1) {
+  publicData().value.AppHeadHover = 2
+} else if (path === "/accident") {
+  publicData().value.AppHeadHover = 3
+}
 </script>
 
 <style scoped>

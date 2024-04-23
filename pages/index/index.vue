@@ -34,6 +34,7 @@
 
 <script setup>
 publicData().value.AppHeadHover = 0
+
 const swiperPaginationVerticalAfterBottom = ['80%', '60%', '40%', '20%', "0%"]
 const activeIndex = ref(0)
 //获取实例 到全局

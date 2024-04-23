@@ -15,7 +15,13 @@
         <!--内容-->
         <div class="LongTermTeenager_D1_pc">
           <div class="D1_pc_content_D1 animate__animated animate__fadeInUp">
-            <img alt="" src="/img/c少年1s.png">
+            <div>
+              <img alt="" src="/img/c少年1s.png">
+            </div>
+            <div>
+              <h4>科技节上大放异彩</h4>
+              <p>广州市白云工商技师学院2023科技节，让科技成果大放异彩，也让外界得以一探...</p>
+            </div>
           </div>
 
           <div class="D1_pc_content_D2 animate__animated animate__fadeInRight">
@@ -31,13 +37,14 @@
               </li>
             </ul>
             <div class="D1_pc_content_D2_btn">
-              <NuxtLink to="/LongTermTeenager/article" style="color: white">
+              <NuxtLink to="/LongTermTeenager/storyLine" style="color: white">
                 细说故事的故事
               </NuxtLink>
             </div>
           </div>
 
         </div>
+        <!--移动-->
         <NuxtLink to="/LongTermTeenager/article" style="color: white">
           <div class="LongTermTeenager_D1_Mobile animate__animated animate__fadeInUp">
             <swiper :pagination="{clickable:true}" :modules="[SwiperPagination]"
@@ -63,6 +70,7 @@
 
 <script setup>
 publicData().value.AppHeadHover = 2
+
 const pageDataArray = ref([
   {
     "articleId": 1,

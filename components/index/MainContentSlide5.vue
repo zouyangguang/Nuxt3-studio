@@ -24,7 +24,7 @@
             class="MainContent_slide5_N_D animate__animated animate__fadeInUp">
 
           <template v-for="(item,index) in pageDataArrayPc" :key="index">
-            <swiper-slide class="swiper-slide" >
+            <swiper-slide class="swiper-slide">
 
               <li class="MainContent_slide5_N_D_li_1">
                 <div><img alt="" :src="item.positionImgUrl[0]"></div>
@@ -143,15 +143,24 @@ const pageDataArray = ref(
     ])
 
 
-
 const url = publicData().value.IPAddress + '/changyuan/query/index/productList/data'
 //获取网络请求数据
-const {data, pending, error} = await useFetch(url, {server: true})
-if (data.value != null) {
-  pageDataArray.value = [...data.value];
-  console.log("移动端数据", pageDataArray.value)
-}
+// const {data, pending, error} = await useFetch(url, {server: false})
+// if (data.value != null) {
+//   pageDataArray.value = [...data.value];
+//   console.log("移动端数据", pageDataArray.value)
+// }
 
+
+const {data, pending, error} = await useFetch(url, {
+  server: false
+})
+watchEffect(() => {
+  if (!pending.value && !error.value) {
+    pageDataArray.value = [...data.value];
+    console.log("移动端数据", pageDataArray.value)
+  }
+})
 
 
 //转换pc页面数据格式
