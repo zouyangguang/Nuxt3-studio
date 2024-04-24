@@ -2,8 +2,10 @@
   <div class="storyLine">
     <div class="Background"></div>
     <div class="boxScrollbar">
-      <long-term-teenager-story-line1></long-term-teenager-story-line1>
-      <long-term-teenager-story-line1></long-term-teenager-story-line1>
+      <long-term-teenager-story-line1>
+      </long-term-teenager-story-line1>
+      <long-term-teenager-story-line2>
+      </long-term-teenager-story-line2>
     </div>
 
   </div>
@@ -11,6 +13,8 @@
 
 <script setup>
 publicData().value.AppHeadHover = 2
+
+
 </script>
 
 <style scoped>
@@ -30,9 +34,6 @@ publicData().value.AppHeadHover = 2
   filter: blur(5px);
 }
 
-.storyLine > .swiper {
-  height: 100%;
-}
 
 .boxScrollbar {
   height: 100%;
@@ -40,8 +41,8 @@ publicData().value.AppHeadHover = 2
   padding-bottom: 50px;
 }
 
-.boxScrollbar > div {
-  scroll-snap-align: center;
-}
+/*.boxScrollbar > div {*/
+/*  scroll-snap-align: center;*/
+/*}*/
 
 </style>

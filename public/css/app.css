@@ -51,6 +51,7 @@ a {
 .boxScrollbar {
     overflow: hidden;
     overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 /*body::-webkit-scrollbar {*/

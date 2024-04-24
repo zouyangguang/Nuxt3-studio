@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="StoryLine1">
     <div style="height: 5vw;min-height: 50px"></div>
     <div class="centered">
       <div class="StoryLine1_content">
@@ -8,30 +8,30 @@
           <div :style="`background-image: url(/img/a首页3b.png)`">
             <img alt="log" src="/img/a首页3路径.png">
           </div>
-          <h2>返回</h2>
+          <h2 style="font-size: 2.5cqw;">返回</h2>
         </div>
         <!-- 标题-->
-        <div class="centered">
+        <div class="centered" style="font-size: 1.5cqw">
           <h1>科技节上大放异彩</h1>
           <p>2023年6月6日 13:32</p>
         </div>
         <!--文章封面列表-->
         <div class="imgList">
           <ul class="boxScrollbar">
-            <li v-for="i in 4" class="centered">
+            <li v-for="i in 4" class="centered" :key="i">
               <img alt="" src="/public/img/c少年1s.png">
             </li>
           </ul>
         </div>
         <!-- 文章内容-->
         <div class="content">
-          <div class="boxScrollbar">
+          <div class="boxScrollbar" style="font-size: 1.7cqw;">
             <p>
               广州市白云工商技师学院2023科技节，科技成果在此大放异彩，也让外界有机会深入了解学院的深厚学术底蕴与卓越创新实力。在这场充满智慧与创意的科技盛宴中，张淞鸣作为团队中的一员，展现出了他独特的协作精神和创新思维。</p>
             <p>
               张淞鸣所在的团队专注于软件开发项目，他们共同打造了一款功能强大、操作便捷的软件产品。在科技节的项目展示环节，张淞鸣与团队成员一同向观众详细介绍了软件的设计思路、创新点以及潜在的市场应用价值。他们的精彩演示赢得了观众阵阵掌声，也充分展现了团队在软件开发领域的实力与潜力。</p>
             <ul>
-              <li v-for="i in 2" class="centered">
+              <li v-for="i in 2" class="centered" :key="i">
                 <img alt="" src="/public/img/c少年1s.png">
               </li>
             </ul>
@@ -46,11 +46,20 @@
 
 <script setup>
 
+
 </script>
 
 <style scoped>
 /**/
+.StoryLine1 {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: center;
+}
 
+/*居中*/
 .centered {
   display: flex;
   justify-content: center;
@@ -89,9 +98,6 @@
   color: #a4d4fa;
 }
 
-.return_home > h2 {
-  font-size: 2.5cqw;
-}
 
 /*返回图片盒子*/
 .return_home > div {
@@ -116,7 +122,6 @@
 /*标题*/
 .StoryLine1_content > div:nth-child(2) {
   position: relative;
-  font-size: 1.5cqw;
 }
 
 
@@ -158,7 +163,6 @@
 
 .content > div > p {
   text-indent: 2em;
-  font-size: 1.7cqw;
   margin: 1em 0;
 }
 
