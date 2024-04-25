@@ -6,6 +6,8 @@
       </long-term-teenager-story-line1>
       <long-term-teenager-story-line2>
       </long-term-teenager-story-line2>
+      <long-term-teenager-story-line3>
+      </long-term-teenager-story-line3>
     </div>
 
   </div>
@@ -14,6 +16,7 @@
 <script setup>
 publicData().value.AppHeadHover = 2
 
+const url = publicData().value.IPAddress + "/changyuan/query/LongTermTeenager/article/list"
 
 </script>
 
@@ -38,7 +41,7 @@ publicData().value.AppHeadHover = 2
 .boxScrollbar {
   height: 100%;
   scroll-snap-type: y mandatory;
-  padding-bottom: 50px;
+  padding-bottom: 10px;
 }
 
 /*.boxScrollbar > div {*/

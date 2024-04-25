@@ -8,19 +8,19 @@
             <div :style="`background-image: url(/img/a首页3b.png)`">
               <img alt="log" src="/img/a首页3路径.png">
             </div>
-            <h2 style="font-size: 2.2cqw">更年轻的群体，容纳更多元的文化</h2>
+            <h2 style="font-size: 2.2vw">更年轻的群体，容纳更多元的文化</h2>
           </div>
-          <p style="font-size: 1.9cqw" class="boxScrollbar">
+          <p style="font-size: 1.9vw" class="boxScrollbar">
             汇聚企业技能大师与教学名师的共同智慧，以实际企业项目为核心驱动力，通过真实的业务环境、遵循敏捷开发的开发流程和团队协作模式，并借鉴师傅带徒弟模式，培养德才兼备的综合型人才，助力专业集群的全面发展，形成了高技能人才绝技绝活的代际传承机制。
           </p>
-          <ul style="font-size: 2cqw">
+          <ul style="font-size: 2vw">
             <li>
               <div>
                 <p>在校</p>
                 <p>成员数</p>
               </div>
               <h1>12</h1>
-              <p style="font-size: 1cqw">人</p>
+              <p style="font-size: 1vw">人</p>
             </li>
             <li>
               <div>
@@ -28,24 +28,23 @@
                 <p>成员数</p>
               </div>
               <h1>5</h1>
-              <p style="font-size: 1cqw">人</p>
+              <p style="font-size: 1vw">人</p>
             </li>
           </ul>
         </div>
-        <div class="content_img centered"><img src="/public/img/c少年1s.png" alt=""></div>
+        <div class="content_img centered"><img src="/img/a首页3n1.jpg" alt=""></div>
       </li>
       <li class="content">
-        <div class="content_img centered"><img src="/public/img/c少年1s.png" alt=""></div>
+        <div class="content_img centered"><img src="/img/c少年6s.png" alt=""></div>
         <div class="detailed">
           <!-- 标题-->
           <div class="return_home">
-            <h2 style="font-size: 2.2cqw">站在巨人的肩膀上，做彼此的得力队友。</h2>
+            <h2 style="font-size: 2.2vw">站在巨人的肩膀上，做彼此的得力队友。</h2>
           </div>
-          <p style="font-size: 1.9cqw" class="boxScrollbar">
+          <p style="font-size: 1.9vw" class="boxScrollbar">
             在这个团队里，以项目为导向，大家讨论、交流、学习、进步，分工协作开发高质量的真实的项目，分享技术和经验。平时再水水群、聊聊天，如果恰
             好赶上了秋招，还能蹭上学长学姐们一顿又一顿的offer饭！ 美滋滋
           </p>
-
         </div>
       </li>
     </ul>

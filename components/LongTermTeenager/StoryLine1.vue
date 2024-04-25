@@ -4,35 +4,40 @@
     <div class="centered">
       <div class="StoryLine1_content">
         <!-- 返回-->
-        <div class="return_home">
+
+        <div class="return_home animate__animated animate__fadeInLeft" @click="router.push('/LongTermTeenager')">
           <div :style="`background-image: url(/img/a首页3b.png)`">
             <img alt="log" src="/img/a首页3路径.png">
           </div>
-          <h2 style="font-size: 2.5cqw;">返回</h2>
+          <h2 style="font-size: 2.5vw;">返回</h2>
         </div>
+
         <!-- 标题-->
-        <div class="centered" style="font-size: 1.5cqw">
+        <div class="centered animate__animated animate__fadeInDown" style="font-size: 1.5vw">
           <h1>科技节上大放异彩</h1>
           <p>2023年6月6日 13:32</p>
         </div>
         <!--文章封面列表-->
-        <div class="imgList">
+        <div class="imgList  animate__animated animate__fadeInUp">
           <ul class="boxScrollbar">
-            <li v-for="i in 4" class="centered" :key="i">
-              <img alt="" src="/public/img/c少年1s.png">
+            <li v-for="item in imgList" class="centered" :key="i">
+              <img alt="" :src="item">
             </li>
           </ul>
         </div>
         <!-- 文章内容-->
-        <div class="content">
-          <div class="boxScrollbar" style="font-size: 1.7cqw;">
+        <div class="content  animate__animated animate__zoomIn">
+          <div class="boxScrollbar" style="font-size: 1.7vw;">
             <p>
               广州市白云工商技师学院2023科技节，科技成果在此大放异彩，也让外界有机会深入了解学院的深厚学术底蕴与卓越创新实力。在这场充满智慧与创意的科技盛宴中，张淞鸣作为团队中的一员，展现出了他独特的协作精神和创新思维。</p>
             <p>
               张淞鸣所在的团队专注于软件开发项目，他们共同打造了一款功能强大、操作便捷的软件产品。在科技节的项目展示环节，张淞鸣与团队成员一同向观众详细介绍了软件的设计思路、创新点以及潜在的市场应用价值。他们的精彩演示赢得了观众阵阵掌声，也充分展现了团队在软件开发领域的实力与潜力。</p>
             <ul>
-              <li v-for="i in 2" class="centered" :key="i">
+              <li class="centered">
                 <img alt="" src="/public/img/c少年1s.png">
+              </li>
+              <li class="centered">
+                <img alt="" src="/public/img/c少年5s.png">
               </li>
             </ul>
             <p>
@@ -45,7 +50,9 @@
 </template>
 
 <script setup>
+const router = useRouter()
 
+const imgList = ["/img/c少年1s.png", "/img/c少年2s.png", "/img/c少年3s.png", "/img/c少年4s.png"]
 
 </script>
 
@@ -146,7 +153,7 @@
 }
 
 .imgList > ul li > img {
-  width: 110%;
+  width: 120%;
   height: auto;
 }
 
@@ -180,6 +187,7 @@
 }
 
 .content > div > ul > li > img {
-  width: 110%;
+  width: 120%;
+  height: auto;
 }
 </style>
