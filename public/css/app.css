@@ -3,9 +3,6 @@ body {
     /*overflow: hidden;*/
 }
 
-img {
-    width: 100px;
-}
 
 * {
     margin: 0;
@@ -101,5 +98,167 @@ a {
         max-width: initial;
         aspect-ratio: 490 / 667;
         position: relative;
+    }
+}
+
+.LongTermCreation_PC {
+    padding: 0;
+    display: flex;
+}
+
+/*pc段 页面展示右*/
+.LongTermCreation_PC > .PcExhibition {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideInRight;
+    animation-duration: 1s;
+}
+
+/*视频边框*/
+.VideoBorder {
+    width: 90%;
+    max-width: 95%;
+    aspect-ratio: 16/9;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgb(51, 51, 51);
+
+}
+
+/*视频布局*/
+.VideoBorder > video {
+    width: 100%;
+    height: 100%;
+
+}
+
+/*移动端*/
+.LongTermCreation_Mobile {
+    display: var(--Mobile-is-show);
+    padding-right: 1%;
+    padding-left: 1%;
+    height: 100%;
+}
+
+/*标题*/
+.LongTermCreation_Mobile > h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: max-content;
+    height: 8%;
+    font-size: 1.5em;
+    padding-right: 10px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    animation: fadeInUp;
+    animation-duration: 1s;
+}
+
+.LongTermCreation_Mobile > h1 > img {
+    height: 100%;
+    width: auto;
+}
+
+/*文字介绍*/
+.LongTermCreation_Mobile_TextIntro {
+    font-size: 1em;
+    margin-top: 5%;
+    border: 1px solid rgba(255, 255, 255, 0);
+    padding: 2% 5%;
+    border-radius: 10px;
+    height: 40%;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+    animation: fadeInUp;
+    animation-duration: 1s;
+}
+
+.LongTermCreation_Mobile_TextIntro p {
+    margin: 2% 0;
+}
+
+/*功能列表*/
+.LongTermCreation_Mobile_D2 {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+}
+
+.LongTermCreation_Mobile_D2_U1 {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeInLeft;
+    animation-duration: 1s;
+}
+
+.LongTermCreation_Mobile_D2_U1 li {
+    width: 95%;
+    padding: 5%;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto 10%;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.LongTermCreation_Mobile_D2_V {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: fadeInRight;
+    animation-duration: 1s;
+}
+
+.LongTermCreation_Mobile_D2_V video {
+    width: 100%;
+    /*background-color: rgba(0, 0, 0, 0.7);*/
+    /*border: 10px solid black;*/
+    box-shadow: 0 0 4px 1px #c4c4c4;
+    /*border-radius: 15px;*/
+}
+
+.LongTermCreation_Mobile_D2_V > .swiper {
+    width: 40%;
+    overflow: initial;
+}
+
+.LongTermCreation_Mobile_D2_V > .swiper .swiper-slide {
+    transform: scale(0.8);
+    transition: 0.5s;
+}
+
+.LongTermCreation_Mobile_D2_V .swiper-slide > img {
+    width: 100%;
+}
+
+.LongTermCreation_Mobile_D2_V .swiper-slide-active {
+    transform: scale(1) !important;
+    z-index: 2;
+}
+
+
+@media screen and (max-width: 900px) {
+    .LongTermCreation_PC {
+        display: none;
+    }
+
+    .LongTermCreation .LongTermCreation_Mobile {
+        display: block;
     }
 }

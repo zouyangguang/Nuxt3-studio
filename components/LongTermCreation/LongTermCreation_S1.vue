@@ -8,7 +8,7 @@
       <!-- 展示 右-->
       <div class="PcExhibition">
         <div class="VideoBorder">
-          <video ref="LongTermCreationVideo" controls>
+          <video controls>
             <source :src="VideoUrl">
           </video>
         </div>
@@ -37,7 +37,7 @@
         </ul>
 
         <div class="LongTermCreation_Mobile_D2_V">
-          <video ref="LongTermCreationVideo" controls>
+          <video controls>
             <source :src="VideoUrl">
           </video>
         </div>
@@ -50,7 +50,7 @@
 
 <script setup>
 
-const props = defineProps(['LongTermCreationData',"fileUrlList"])
+const props = defineProps(['LongTermCreationData', "fileUrlList"])
 
 const Tag = [['荣誉', '证书'], ['扫码', '体验'], ['全屏', '播放']]
 const VideoUrl = props.fileUrlList.videoUrl
@@ -66,7 +66,6 @@ const PcIntroData = {
     text: "学生端"
   }]
 }
-
 
 
 </script>

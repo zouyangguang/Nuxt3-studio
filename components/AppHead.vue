@@ -1,7 +1,7 @@
 <template>
   <!--头部导航栏-->
   <div class="head">
-    <div @click="publicData().value.AdminLoginIsShow=!publicData().value.AdminLoginIsShow">
+    <div>
       <img alt="log" src="/img/Logo.svg">
     </div>
     <!--大标题-->
@@ -30,7 +30,6 @@
       </ul>
     </div>
   </transition>
-  <!--  <div class="head-height"></div>-->
 </template>
 
 <script setup>

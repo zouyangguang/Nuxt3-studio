@@ -11,7 +11,7 @@
 
         <li v-show="tabHover===index" class="boxScrollbar" v-for="(item,index) in member">
           <ul class="memberList">
-            <li v-for="i in item" class="animate__animated animate__zoomIn">
+            <li v-for="i in item" class="animate__animated animate__fadeIn">
               <div>
                 <img :src="i.imgUrl" alt="">
               </div>

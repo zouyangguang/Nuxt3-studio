@@ -129,19 +129,5 @@ useSeoMeta({
   .MainContent .swiper-pagination-vertical {
     display: none;
   }
-
-  /*.layout_backdrop {*/
-  /*  min-width: 100vw;*/
-  /*  min-height: 100vh;*/
-  /*  align-items: flex-start;*/
-  /*}*/
-  /*.layout_content {*/
-  /*  height: 90%;*/
-  /*  width: auto;*/
-  /*  min-width: 320px;*/
-  /*  max-width: initial;*/
-  /*  aspect-ratio: 490 / 667;*/
-  /*  position: relative;*/
-  /*}*/
 }
 </style>

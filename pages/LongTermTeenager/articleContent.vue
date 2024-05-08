@@ -1,46 +1,49 @@
 <template>
-    <div class="articleContent">
-      <div class="articleBackground"></div>
-      <div class="content">
-        <div class="content_title animate__animated animate__fadeInDown">
-          <h1>{{ articleContentData.articleTitle }}</h1>
-          <h2>作者: {{ articleContentData.author }}</h2>
-          <div>
-            <span><img src="/img/c日历.png" alt="">发表于{{ articleContentData.createDate }}</span>
-            <span> <img src="/img/c更新.png" alt="">更新于{{ articleContentData.updateDate }}</span>
-          </div>
-        </div>
-        <div class="content_articleContent animate__animated animate__fadeIn animate__delay-1s">
-          {{ articleContentData.articleContent }}
+  <div class="articleContent">
+    <div class="articleBackground"></div>
+    <div class="content">
+      <div class="content_title animate__animated animate__fadeInDown">
+        <h1>{{ articleContentData.articleTitle }}</h1>
+        <h2>作者: {{ articleContentData.author }}</h2>
+        <div>
+          <span><img src="/img/c日历.png" alt="">发表于{{ articleContentData.createDate }}</span>
+          <span> <img src="/img/c更新.png" alt="">更新于{{ articleContentData.updateDate }}</span>
         </div>
       </div>
+      <div class="content_articleContent animate__animated animate__fadeIn animate__delay-1s">
+        {{ articleContentData.articleContent }}
+      </div>
     </div>
+  </div>
 </template>
 
 <script setup>
 //设置 导航栏焦点
 publicData().value.AppHeadHover = 2
-const articleContentData = ref({
-  "articleId": 2,
-  "articleTitle": "实习宝(测试)",
-  "author": "丘国琛",
-  "articleContent": "带你从0进入前端世界，感受编程之美，开发出令人惊叹的动态可交互Web应用，让想象力得到最大发挥",
-  "createDate": "2024-03-21 17:37:06",
-  "updateDate": "2024-03-21 17:37:06"
+definePageMeta({
+  keepalive: false//设置为keepAlive
 })
+const articleContentData = ref({})
 
 const route = useRoute()
-const url = ref(publicData().value.IPAddress + "/changyuan/query/LongTermTeenager/article/articleContent/data/" + route.query.articleId)
 
-const {data, pending, error} = await useFetch(url, {
-  server: false
+
+
+onActivated(async () => {
+  console.log(route.query.articleId)
+  const url = ref(publicData().value.IPAddress + "/changyuan/query/LongTermTeenager/article/articleContent/data/" + route.query.articleId)
+  const {data, pending, error} = await useFetch(url, {
+    server: false
+  })
+  console.log(data.value)
+  watchEffect(() => {
+    if (!pending.value && !error.value) {
+      articleContentData.value = data.value;
+    }
+  })
 })
-watchEffect(() => {
-  if (!pending.value && !error.value) {
-    console.log(data.value)
-    articleContentData.value = data.value;
-  }
-})
+
+
 </script>
 
 <style scoped>

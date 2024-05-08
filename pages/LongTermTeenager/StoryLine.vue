@@ -41,11 +41,8 @@ const url = publicData().value.IPAddress + "/changyuan/query/LongTermTeenager/ar
 .boxScrollbar {
   height: 100%;
   scroll-snap-type: y mandatory;
-  padding-bottom: 10px;
+  padding: 0 5%;
 }
 
-/*.boxScrollbar > div {*/
-/*  scroll-snap-align: center;*/
-/*}*/
 
 </style>

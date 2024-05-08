@@ -20,7 +20,7 @@
         <!--文章封面列表-->
         <div class="imgList  animate__animated animate__fadeInUp">
           <ul class="boxScrollbar">
-            <li v-for="item in imgList" class="centered" :key="i">
+            <li v-for="item in imgList" class="centered">
               <img alt="" :src="item">
             </li>
           </ul>

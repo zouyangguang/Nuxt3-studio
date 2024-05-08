@@ -1,7 +1,7 @@
 <template>
   <div class="MainContent_slide1">
     <!-- PC端-->
-    <video id="MainContent_slide1_video" controls autoplay muted loop
+    <video class="MainContent_slide1_video" autoplay muted loop
            src="/img/官网视频PC.mp4"></video>
     <!-- PC端结束-->
 
@@ -39,10 +39,9 @@
   pointer-events: none;
   min-height: 100%;
   min-width: 100%;
-  width: 100vw;
-  height: 100vh;
   object-fit: cover;
   z-index: 0;
+  background-color: #fdc22e;
 }
 
 .MainContent_slide1_move {
@@ -95,13 +94,16 @@
   cursor: pointer;
 
 }
-.MainContent_slide1 video::-webkit-media-controls-enclosure {
-  display: none;
-}
+
+/*视频 进度条*/
+/*.MainContent_slide1 video::-webkit-media-controls-enclosure {*/
+/*  display: none;*/
+/*}*/
 @media screen and (max-width: 900px) {
-  .MainContent_slide1_D p , #MainContent_slide1_video{
+  .MainContent_slide1_D p, .MainContent_slide1_video {
     display: none;
   }
+
   .MainContent_slide1_move {
     display: flex;
   }

@@ -52,15 +52,6 @@ const articleData = ref([
     "createDate": "2024-03-21 17:41:14"
   }
 ])
-// const {data} = await useAsyncData('PageDataArray', () => {
-//   return useFetch(url)
-//       .then((res) => {
-//         return res.data.value;
-//       })
-// });
-// if (data.value != null) {
-//   articleData.value = data.value;
-// }
 
 const url=publicData().value.IPAddress + '/changyuan/query/LongTermTeenager/article/articleList/data'
 

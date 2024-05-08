@@ -68,13 +68,12 @@
   width: 95%;
   aspect-ratio: 3/1;
   overflow: hidden;
-
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   display: flex;
   color: rgba(253, 251, 251, 0.9);
-  margin: 0 auto 5%;
+  margin: 5% auto;
   scroll-snap-align: center;
 }
 
