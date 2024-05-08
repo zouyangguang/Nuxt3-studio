@@ -194,6 +194,7 @@ useSeoMeta({
   height: 100vh;
   min-height: 670px;
   color: white;
+  background-color: black;
 }
 
 .LongTermCreation > .swiper {
