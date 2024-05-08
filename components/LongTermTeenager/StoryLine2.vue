@@ -156,8 +156,8 @@
 /*  width: 50%;*/
 /*}*/
 
-.content > .content_img > img {
-  width: 130%;
+.content_img > img {
+  height: 100%;
 }
 
 

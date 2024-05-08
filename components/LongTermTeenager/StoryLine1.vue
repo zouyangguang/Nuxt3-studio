@@ -33,10 +33,10 @@
             <p>
               张淞鸣所在的团队专注于软件开发项目，他们共同打造了一款功能强大、操作便捷的软件产品。在科技节的项目展示环节，张淞鸣与团队成员一同向观众详细介绍了软件的设计思路、创新点以及潜在的市场应用价值。他们的精彩演示赢得了观众阵阵掌声，也充分展现了团队在软件开发领域的实力与潜力。</p>
             <ul>
-              <li class="centered">
+              <li>
                 <img alt="" src="/public/img/c少年1s.png">
               </li>
-              <li class="centered">
+              <li>
                 <img alt="" src="/public/img/c少年5s.png">
               </li>
             </ul>
@@ -177,17 +177,20 @@ const imgList = ["/img/c少年1s.png", "/img/c少年2s.png", "/img/c少年3s.png
   display: flex;
   justify-content: space-around;
   height: 50%;
+
 }
 
 .content > div > ul > li {
-  width: 40%;
   border-radius: 5px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.302);
+
 }
 
 .content > div > ul > li > img {
-  width: 120%;
-  height: auto;
+  height: 100%;
 }
 </style>

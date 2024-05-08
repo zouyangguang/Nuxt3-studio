@@ -144,13 +144,6 @@ const pageDataArray = ref(
 
 
 const url = publicData().value.IPAddress + '/changyuan/query/index/productList/data'
-//获取网络请求数据
-// const {data, pending, error} = await useFetch(url, {server: false})
-// if (data.value != null) {
-//   pageDataArray.value = [...data.value];
-//   console.log("移动端数据", pageDataArray.value)
-// }
-
 
 const {data, pending, error} = await useFetch(url, {
   server: false

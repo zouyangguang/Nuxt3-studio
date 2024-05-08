@@ -96,12 +96,12 @@
 }
 
 .D1_pc_content_D2_li_D1 > img {
-    width: 120%;
+    height: 130%;
     transition: 0.5s;
 }
 
 .D1_pc_content_D2 ul li:hover .D1_pc_content_D2_li_D1 > img {
-    width: 120%;
+    height: 140%;
 }
 
 .D1_pc_content_D2_li_D2 {
