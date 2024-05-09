@@ -1,14 +1,10 @@
 <template>
   <div class="storyLine">
     <div class="Background"></div>
-    <div class="boxScrollbar">
-      <long-term-teenager-story-line1>
-      </long-term-teenager-story-line1>
-      <long-term-teenager-story-line2>
-      </long-term-teenager-story-line2>
-      <long-term-teenager-story-line3>
-      </long-term-teenager-story-line3>
-    </div>
+
+    <long-term-teenager-story-line1>
+    </long-term-teenager-story-line1>
+
 
   </div>
 </template>

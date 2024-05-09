@@ -1,71 +1,78 @@
 <template>
-
-  <div class="LongTermTeenager">
-    <div class="LongTermTeenager_D1 layout_backdrop">
-      <div class="layout_content">
-        <!--标题-->
-        <IndexMainContentHeadline :Headline="{
+  <div class="boxScrollbar LongTermTeenager">
+    <div>
+      <div>
+        <div class="LongTermTeenager_D1 layout_backdrop">
+          <div class="layout_content">
+            <!--标题-->
+            <IndexMainContentHeadline :Headline="{
         backgroundImage: '/img/a首页3b.png',
         logUrl:'/img/a首页3路径.png',
         headline: '长远少年·一起成长的故事',
         introduce: '合作是柔和的力量，成长是智慧的绽放，当二者相遇，将创造无限可能的奇迹',
         btn: '',
         btnBackground:''}">
-        </IndexMainContentHeadline>
-        <!--内容-->
-        <div class="LongTermTeenager_D1_pc">
-          <div class="D1_pc_content_D1 animate__animated animate__fadeInUp">
-            <div>
-              <img alt="" src="/img/c少年1s.png">
-            </div>
-            <div>
-              <h4>科技节上大放异彩</h4>
-              <p>广州市白云工商技师学院2023科技节，让科技成果大放异彩，也让外界得以一探...</p>
-            </div>
-          </div>
-
-          <div class="D1_pc_content_D2 animate__animated animate__fadeInRight">
-            <ul class="boxScrollbar">
-              <li v-for="item in pageDataArray" @click="toArticleContent(item)">
-                <div class="D1_pc_content_D2_li_D1">
-                  <img alt="" :src="item.articleImgUrl">
+            </IndexMainContentHeadline>
+            <!--内容-->
+            <div class="LongTermTeenager_D1_pc">
+              <div class="D1_pc_content_D1 animate__animated animate__fadeInUp">
+                <div>
+                  <img alt="" src="/img/c少年1s.png">
                 </div>
-                <div class="D1_pc_content_D2_li_D2">
-                  <h4>{{ item.articleTitle }}</h4>
-                  <p>{{ item.articleContent }}</p>
+                <div>
+                  <h4>科技节上大放异彩</h4>
+                  <p>广州市白云工商技师学院2023科技节，让科技成果大放异彩，也让外界得以一探...</p>
                 </div>
-              </li>
-            </ul>
-            <div class="D1_pc_content_D2_btn">
-              <NuxtLink to="/LongTermTeenager/storyLine" style="color: white">
-                细说故事的故事
-              </NuxtLink>
-            </div>
-          </div>
+              </div>
 
+              <div class="D1_pc_content_D2 animate__animated animate__fadeInRight">
+                <ul class="boxScrollbar">
+                  <li v-for="item in pageDataArray" @click="toArticleContent(item)">
+                    <div class="D1_pc_content_D2_li_D1">
+                      <img alt="" :src="item.articleImgUrl">
+                    </div>
+                    <div class="D1_pc_content_D2_li_D2">
+                      <h4>{{ item.articleTitle }}</h4>
+                      <p>{{ item.articleContent }}</p>
+                    </div>
+                  </li>
+                </ul>
+                <div class="D1_pc_content_D2_btn">
+                  <NuxtLink to="/LongTermTeenager/storyLine" style="color: white">
+                    细说故事的故事
+                  </NuxtLink>
+                </div>
+              </div>
+
+            </div>
+            <!--移动-->
+            <NuxtLink to="/LongTermTeenager/article" style="color: white">
+              <div class="LongTermTeenager_D1_Mobile animate__animated animate__fadeInUp">
+                <swiper :pagination="{clickable:true}" :modules="[SwiperPagination]"
+                        @slideChangeTransitionStart="slideChangeTransitionStart">
+                  <swiper-slide v-for="item in pageDataArray">
+                    <img alt="" :src="item.articleImgUrl">
+                  </swiper-slide>
+                </swiper>
+                <div style="height: 60%" class="boxScrollbar">
+                  <h1 class="animate__animated" :class="{  animate__fadeInUp: disabled }">
+                    {{ pageDataArray[activeIndex].articleTitle }}</h1>
+                  <p class="animate__animated" :class="{  animate__fadeInUp: disabled }">
+                    {{ pageDataArray[activeIndex].articleContent }}</p>
+                </div>
+              </div>
+            </NuxtLink>
+
+          </div>
         </div>
-        <!--移动-->
-        <NuxtLink to="/LongTermTeenager/article" style="color: white">
-          <div class="LongTermTeenager_D1_Mobile animate__animated animate__fadeInUp">
-            <swiper :pagination="{clickable:true}" :modules="[SwiperPagination]"
-                    @slideChangeTransitionStart="slideChangeTransitionStart">
-              <swiper-slide v-for="item in pageDataArray">
-                <img alt="" :src="item.articleImgUrl">
-              </swiper-slide>
-            </swiper>
-            <div style="height: 60%" class="boxScrollbar">
-              <h1 class="animate__animated" :class="{  animate__fadeInUp: disabled }">
-                {{ pageDataArray[activeIndex].articleTitle }}</h1>
-              <p class="animate__animated" :class="{  animate__fadeInUp: disabled }">
-                {{ pageDataArray[activeIndex].articleContent }}</p>
-            </div>
-          </div>
-        </NuxtLink>
-
       </div>
     </div>
-
+    <long-term-teenager-story-line2>
+    </long-term-teenager-story-line2>
+    <long-term-teenager-story-line3>
+    </long-term-teenager-story-line3>
   </div>
+
 </template>
 
 <script setup>
