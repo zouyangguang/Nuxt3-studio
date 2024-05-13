@@ -22,7 +22,9 @@
 </template>
 
 <script setup>
-
+onActivated(() => {
+  document.querySelector(".MainContent_slide1_video").play()
+})
 </script>
 
 <style scoped>

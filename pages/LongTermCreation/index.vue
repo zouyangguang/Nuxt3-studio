@@ -85,7 +85,7 @@ onMounted(() => {
   const videos = document.querySelectorAll(".LongTermCreation_Mobile video")
   videos.forEach(video => {//循环
     video.addEventListener('fullscreenchange', () => {
-      console.log("移动视频全屏", MobileIsShow)
+      // console.log("移动视频全屏", MobileIsShow)
       //是否处于全屏模式
       if (document.fullscreenElement?.nodeName === "VIDEO") {
         MobileIsShow.value = 'block'

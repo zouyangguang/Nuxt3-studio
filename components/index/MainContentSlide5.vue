@@ -151,7 +151,7 @@ const {data, pending, error} = await useFetch(url, {
 watchEffect(() => {
   if (!pending.value && !error.value) {
     pageDataArray.value = [...data.value];
-    console.log("移动端数据", pageDataArray.value)
+    //console.log("移动端数据", pageDataArray.value)
   }
 })
 
