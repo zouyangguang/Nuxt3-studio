@@ -9,7 +9,8 @@ useSeoMeta({
   title: "长远官网",
   description: "长远官网",
   keywords: "广州白云学院,长远官网,长远工作室",
-  referrer: "no-referrer"
+  referrer: "no-referrer",
+  link:[{rel:'shortcut icon',href:'/favicon.ico'}]
 })
 
 
