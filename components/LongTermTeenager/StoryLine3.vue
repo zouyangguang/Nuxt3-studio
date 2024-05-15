@@ -3,8 +3,9 @@
     <div style="height: 5vw;min-height: 50px; scroll-snap-align: start;"></div>
     <div class="content">
       <ul class="tab" style="font-size: 2vw">
-        <li class="centered" :class="tabHover===0?'tab_li_hover':''" @click="tabHover=0">第1届</li>
-        <li class="centered" :class="tabHover===1?'tab_li_hover':''" @click="tabHover=1">第2届</li>
+        <li class="centered" @click="tabHover=0">第1届</li>
+        <li class="centered" @click="tabHover=1">第2届</li>
+        <li class="tab_li_hover" :class="ClassHoverList[tabHover]"></li>
       </ul>
 
       <ul class="member">
@@ -54,6 +55,7 @@ const member = [
 
   ]
 ]
+const ClassHoverList = ['tab_li_hover1', 'tab_li_hover2']
 
 
 </script>
@@ -104,13 +106,24 @@ const member = [
 }
 
 .tab_li_hover {
+  position: absolute;
+  left: 0;
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.3);
   text-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+  z-index: -1;
 }
 
 .tab li:hover {
   color: #0d87e7;
+}
+
+.tab li:nth-child(2):hover ~ .tab_li_hover .tab_li_hover1 {
+  left: 0;
+}
+
+.tab li:nth-child(2):hover ~ .tab_li_hover, .tab_li_hover2 {
+  left: 12%;
 }
 
 .member {

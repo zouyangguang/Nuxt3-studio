@@ -2,7 +2,7 @@
     height: 100vh;
     background: url("/img/a首页3b.png") no-repeat center center;
     background-size: cover;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
 }
 
 
@@ -12,16 +12,19 @@
     scroll-snap-align: center;
 }
 
+.LongTermTeenager_D1 > .layout_content {
+    width: 80%;
+}
+
 /*PC内容*/
 .LongTermTeenager_D1_pc {
     position: absolute;
-    bottom: 2vh;
-    width: 105%;
-    height: 75%;
+    bottom: 5vh;
+    width: 100%;
+    height: 70%;
     display: flex;
     justify-content: space-between;
     color: white;
-    transform: scale(0.95);
 }
 
 .D1_pc_content_D1 {
@@ -115,7 +118,7 @@
 
 .D1_pc_content_D2_li_D2 h4 {
     max-height: 30%;
-    font-size: 1.5cqw;
+    font-size: 1.5 cqw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -124,7 +127,7 @@
 .D1_pc_content_D2_li_D2 p {
     padding-top: 2%;
     max-height: 70%;
-    font-size: 1.5cqw;
+    font-size: 1.5 cqw;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -137,7 +140,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3cqw;
+    font-size: 3 cqw;
     height: 15%;
     border-radius: 10px;
     background: linear-gradient(270deg, #062380 35%, rgba(255, 255, 255, 0.24) 100%);

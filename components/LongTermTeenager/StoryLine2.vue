@@ -66,6 +66,7 @@
 
 .StoryLine2 > ul > li {
   width: 80%;
+  min-width: 900px;
   aspect-ratio: 3/1;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.1);
@@ -75,6 +76,7 @@
   color: rgba(253, 251, 251, 0.9);
   margin: 5% auto;
   scroll-snap-align: center;
+  transition: 0.5s;
 }
 
 .StoryLine2 > ul > li > div {
@@ -117,7 +119,7 @@
 .content > .detailed > p {
   margin: 2% 0;
   height: 60%;
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .content > .detailed > ul {
@@ -140,7 +142,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.302);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.302);
 }
 
 .content > .detailed > ul > li:nth-child(2) > h1 {
@@ -157,8 +159,12 @@
 /*}*/
 
 .content_img > img {
-  height: 100%;
+  height: 120%;
 }
 
-
+@media screen and (max-width: 900px){
+  .StoryLine2 > ul > li{
+    min-width: 80%;
+  }
+}
 </style>

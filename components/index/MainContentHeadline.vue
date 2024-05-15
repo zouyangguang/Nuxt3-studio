@@ -97,7 +97,7 @@ defineProps<{
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  font-size: 1cqw;
+  font-size: 1.5cqw;
   text-align: center;
   color: white;
   border-radius: 5px;

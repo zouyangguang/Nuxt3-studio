@@ -151,3 +151,8 @@ useSeoMeta({
 <style scoped>
 @import url("/pages/LongTermTeenager/css/LongTermTeenager.css");
 </style>
+<style>
+.LongTermTeenager_D1 .IndexMainContentHeadline {
+  left: 0;
+}
+</style>
