@@ -11,7 +11,7 @@
       </IndexMainContentHeadline>
       <!--内容-->
       <div class="MainContent_slide4_N">
-        <!--移动-->
+
         <swiper class="MainContent_slide4_N_D animate__animated animate__fadeInUp">
           <swiper-slide>
             <div><img alt="" src="/img/a首页4n1.png"></div>
@@ -22,8 +22,8 @@
             <div><img alt="" src="/img/a首页4n2.png"></div>
           </swiper-slide>
         </swiper>
-        <!--移动结束-->
 
+        <!--移动-->
         <swiper class="MainContent_slide4_N_swiper animate__animated animate__fadeInUp">
           <swiper-slide>
             <div>
@@ -37,7 +37,7 @@
             </div>
           </swiper-slide>
         </swiper>
-
+        <!--移动结束-->
       </div>
     </div>
 
@@ -75,10 +75,13 @@ defineProps(["active"])
 .MainContent_slide4_N_D .swiper-slide {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   padding: 10px;
+
 }
 
 .MainContent_slide4_N_D .swiper-slide > div {
+  width: 30%;
   border-radius: 5px;
   margin: 0 10px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
@@ -86,7 +89,6 @@ defineProps(["active"])
 
 .MainContent_slide4_N_D .swiper-slide > div img {
   width: 100%;
-  height: 100%;
 }
 
 /*pc*/

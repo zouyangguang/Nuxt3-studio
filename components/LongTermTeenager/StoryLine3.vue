@@ -15,7 +15,7 @@
               <div>
                 <img :src="i.imgUrl" alt="">
               </div>
-              <div style="font-size: 1.2vw">
+              <div style="font-size: 1vw">
                 <h1>{{ i.name }}</h1>
                 <p>{{ i.class }}</p>
               </div>
@@ -75,7 +75,7 @@ const member = [
 }
 
 .StoryLine3 > .content {
-  width: 95%;
+  width: 80%;
   margin: 0 auto;
   aspect-ratio: 19/9;
   overflow: hidden;

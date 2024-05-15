@@ -9,7 +9,7 @@
           <div :style="`background-image: url(/img/a首页3b.png)`">
             <img alt="log" src="/img/a首页3路径.png">
           </div>
-          <h2 style="font-size: 2.5vw;">返回</h2>
+          <h2 style="font-size: 2vw;">返回</h2>
         </div>
 
         <!-- 标题-->
@@ -27,7 +27,7 @@
         </div>
         <!-- 文章内容-->
         <div class="content  animate__animated animate__zoomIn">
-          <div class="boxScrollbar" style="font-size: 1.7vw;">
+          <div class="boxScrollbar" style="font-size: 1.5vw;">
             <p>
               广州市白云工商技师学院2023科技节，科技成果在此大放异彩，也让外界有机会深入了解学院的深厚学术底蕴与卓越创新实力。在这场充满智慧与创意的科技盛宴中，张淞鸣作为团队中的一员，展现出了他独特的协作精神和创新思维。</p>
             <p>
@@ -138,6 +138,13 @@ const imgList = ["/img/c少年1s.png", "/img/c少年2s.png", "/img/c少年3s.png
 }
 
 /*标题结束*/
+.imgList li{
+  transition: 0.5s;
+  cursor: pointer;
+}
+.imgList li:hover{
+  transform: scale(1.05);
+}
 /*文章封面列表开始*/
 
 .imgList > ul {

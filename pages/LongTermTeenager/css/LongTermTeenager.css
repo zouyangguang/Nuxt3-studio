@@ -1,6 +1,6 @@
-.LongTermTeenager{
+.LongTermTeenager {
     height: 100vh;
-    background: url("/img/a首页3b.png") no-repeat  center center;
+    background: url("/img/a首页3b.png") no-repeat center center;
     background-size: cover;
     scroll-snap-type: y mandatory;
 }
@@ -15,16 +15,17 @@
 /*PC内容*/
 .LongTermTeenager_D1_pc {
     position: absolute;
-    bottom: 0;
-    width: 100%;
+    bottom: 2vh;
+    width: 105%;
     height: 75%;
     display: flex;
     justify-content: space-between;
     color: white;
+    transform: scale(0.95);
 }
 
 .D1_pc_content_D1 {
-    width: 68%;
+    width: 63%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +60,7 @@
 }
 
 .D1_pc_content_D2 {
-    width: 30%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -99,13 +100,13 @@
 }
 
 .D1_pc_content_D2_li_D1 > img {
-    height: 130%;
-    transition: 0.5s;
+    height: 135%;
+    /*transition: 0.5s;*/
 }
 
-.D1_pc_content_D2 ul li:hover .D1_pc_content_D2_li_D1 > img {
-    height: 140%;
-}
+/*.D1_pc_content_D2 ul li:hover .D1_pc_content_D2_li_D1 > img {*/
+/*    height: 145%;*/
+/*}*/
 
 .D1_pc_content_D2_li_D2 {
     width: 40%;
