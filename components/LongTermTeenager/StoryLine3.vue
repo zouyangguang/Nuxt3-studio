@@ -30,6 +30,7 @@
 </template>
 
 <script setup>
+
 const tabHover = ref(0)
 const member = [
   [
@@ -56,7 +57,29 @@ const member = [
   ]
 ]
 const ClassHoverList = ['tab_li_hover1', 'tab_li_hover2']
+import {gsap} from "gsap";
 
+import {ScrollTrigger} from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+  gsap.fromTo(".StoryLine3",
+      {
+        scale: 0,
+        opacity: 0,
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        scrollTrigger: {
+          scroller: '.LongTermTeenager',
+          trigger: ".StoryLine3",
+          start: `top ${document.body.clientHeight * 0.95}`,
+          end: "center center",
+          scrub: true,
+        },
+      });
+})
 
 </script>
 

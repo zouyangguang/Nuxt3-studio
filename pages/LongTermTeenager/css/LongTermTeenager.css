@@ -2,7 +2,7 @@
     height: 100vh;
     background: url("/img/a首页3b.png") no-repeat center center;
     background-size: cover;
-    scroll-snap-type: y proximity;
+    /*scroll-snap-type: y proximity;*/
 }
 
 
@@ -43,8 +43,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-
 }
 
 .D1_pc_content_D1 > div:nth-child(1) > img {
@@ -60,6 +58,10 @@
     padding: 5px;
     line-height: 25px;
     background: rgba(0, 0, 0, 0.5);
+}
+
+.D1_pc_content_D1 > div:nth-child(2) > p {
+    font-size: 0.9em;
 }
 
 .D1_pc_content_D2 {
@@ -118,7 +120,7 @@
 
 .D1_pc_content_D2_li_D2 h4 {
     max-height: 30%;
-    font-size: 1.5 cqw;
+    font-size: 1.5cqw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -127,7 +129,7 @@
 .D1_pc_content_D2_li_D2 p {
     padding-top: 2%;
     max-height: 70%;
-    font-size: 1.5 cqw;
+    font-size: 1.5cqw;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -140,7 +142,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3 cqw;
+    font-size: 3cqw;
     height: 15%;
     border-radius: 10px;
     background: linear-gradient(270deg, #062380 35%, rgba(255, 255, 255, 0.24) 100%);

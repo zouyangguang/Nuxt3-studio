@@ -16,6 +16,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "gsap": "^3.12.5",
     "nuxt-swiper": "^1.2.2"
   }
 }
